@@ -1,5 +1,50 @@
+h1 {
+    color: white;
+}
+
 #container {
     border: 3px solid black;
     text-align: center;
     border-radius: 25px;
+    background-color: #0a380a;
 }
+
+#play {
+    background-color: blue;
+    color: white;
+    font-size: large;
+    width: 100px;
+    height: 30px;
+    margin: 25px;
+}
+
+#game-container {
+    border: 3px solid black;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #0a380a;
+}
+
+.bets{
+    max-width: 18%;
+    max-height: 200px;
+    margin: 25px;
+}
+
+.bet-button {
+    color: white;
+    min-width: 80px;
+    background-color: blue;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+#total-bet {
+    color: white;
+    font-size: 30px;
+    margin: 15px;
+}
+
+
+

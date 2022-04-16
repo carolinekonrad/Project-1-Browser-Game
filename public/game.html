@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's play! Blackjack</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="javascript" href="./app.js">
+</head>
+<body>
+    <div id="game-container">
+        <div style="color: white; font-size: 50px; margin: 25px;">Place your bet!</div>
+        <div class="token-image">
+            <img class="bets" src="./assets/black poker.png">
+            <img class="bets" src="./assets/blue-poker.png">
+            <img class="bets" src="./assets/green-poker.png">
+            <img class="bets" src="./assets/red-poker.png">
+        </div>
+        <div>
+            <button type="button" class="bet-button" id="black">$5</button>
+            <button type="button" class="bet-button" id="blue">$10</button>
+            <button type="button" class="bet-button" id="green">$25</button>
+            <button type="button" class="bet-button" id="red">$50</button>
+        </div>
+        <div id="total-bet">Total Bet: $0</div>
+        <button type="button" class="bet-button" onclick="window.location.href='/blackjack.html'">Ready to Continue?</button>
+    </div>
+</body>
+</html>
