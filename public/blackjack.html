@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Let's play! Blackjack</title>
 </head>
 <body>
-    <div>Hello, world</div>
+    <div id="blackjack-container">
+        <div style="color: white; font-size: 50px; margin: 25px;">Let's play!</div>
+        <div id="current-bet" style="color: gray; font-size: 25px"></div>
+        <div id="dealer-hand">
+            <div class="writing">Dealer's Hand</div>
+                <img>
+                <img>
+                <img>
+                <img>
+                <img>
+            </div>
+
+        <div id="user-hand" class="writing">
+            <div>Your Hand</div>
+                <img>
+                <img>
+                <img>
+                <img>
+                <img>
+        </div>
+
+        <button type="button" class="button" id="hit">Hit</button>
+        <button type="button" class="button" id="stand">Stand</button>
+    </div>
+
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./blackjack.js"></script>
 </body>
 </html>
