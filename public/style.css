@@ -68,5 +68,9 @@ h1 {
     margin: 15px;
 }
 
+.card {
+   width: 75px;
+   height: auto; 
+}
 
 
