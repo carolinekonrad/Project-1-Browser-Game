@@ -10,25 +10,21 @@
 <body>
     <div id="blackjack-container">
         <div style="color: white; font-size: 50px; margin: 25px;">Let's play!</div>
+        <div id="winnings" style="color: gray; font-size: 25px; margin: 5px;">Winnings: $0</div>
         <div id="current-bet" style="color: gray; font-size: 25px"></div>
         <div id="dealer-hand">
-            <div class="writing">Dealer's Hand</div>
+            <div class="writing" id="dealer-hand">Dealer's Hand</div>
                 <img class="card" id="dealer-1" src="">
                 <img class="card" id="dealer-2" src="">
-                <img class="card" id="dealer-3" src="">
-                <img class="card" id="dealer-4" src="">
-                <img class="card" id="dealer-5" src="">
             </div>
+        <div id="dealer-total"></div>
 
         <div id="user-hand" class="writing">
             <div>Your Hand</div>
                 <img class="card" id="user-1" src="">
                 <img class="card" id="user-2" src="">
-                <img class="card" id="user-3" src="">
-                <img class="card" id="user-4" src="">
-                <img class="card" id="user-5" src="">
         </div>
-
+        <div id="user-total"></div>
         <button type="button" class="button" id="hit">Hit</button>
         <button type="button" class="button" id="stand">Stand</button>
     </div>

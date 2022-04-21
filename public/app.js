@@ -1,5 +1,6 @@
 //creating bet variables
 var bet = 0
+sessionStorage.setItem('bet', bet)
 
 var docBet = document.getElementById('total-bet')
 
