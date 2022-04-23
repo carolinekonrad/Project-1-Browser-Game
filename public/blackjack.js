@@ -6,8 +6,9 @@ console.log(newBet)
 var dealerTotal = 0
 var userTotal = 0
 var winnings = 0
-sessionStorage.setItem('winnings', winnings)
+let currentWinnings = sessionStorage.setItem('winnings', winnings)
 var winningsHTML = document.getElementById('winnings')
+winningsHTML.textContent = `Winnings: $` + currentWinnings
 
 //setting dealer and user totals to divs
 var dealerT = document.getElementById('dealer-total')
@@ -85,21 +86,25 @@ function hitButton(){
         winnings = winnings + newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
-        if (confirm("Blackjack!! Do you want to play again?")) {
+        setTimeout (function (){
+            if (confirm("Blackjack!! Do you want to play again?")) {
             window.location.href = '/game.html'
         } else {
             window.location.href = '/index.html'
         }
+    }, 1000)
     } else if (userTotal > 21) {
         dealerNewCard()  
         winnings = winnings - newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
-        if (confirm("Dealer won! Do you want to play again?")) {
+        setTimeout (function() {
+            if (confirm("Dealer won! Do you want to play again?")) {
             window.location.href = '/game.html'            
         } else {
             window.location.href = '/index.html'
         }
+    }, 1000)
     }
 } 
 
@@ -122,21 +127,25 @@ function standButton(){
         winnings = winnings - newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
-        if (confirm("Dealer won! Do you want to play again?")) {
+        setTimeout(function(){
+            if (confirm("Dealer won! Do you want to play again?")) {
             window.location.href = '/game.html'            
         } else {
             window.location.href = '/index.html'
         }
+    }, 1000);
     } else if (dealerTotal > 21) {
         winnings = winnings + newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
-        if (confirm("You win!! Do you want to play again?")) {
+        setTimeout(function(){
+            if (confirm("You win!! Do you want to play again?")) {
             window.location.href = '/game.html'
         } else {
             window.location.href = '/index.html'
         }
-    }
+    }, 1000)
+}
 }
 
 function dealerNewCard(){
