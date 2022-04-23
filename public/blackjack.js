@@ -78,11 +78,13 @@ function initialDeal() {
             userT.textContent = userTotal
         }
 
-async function hitButton(){
-    await userNewCard()
+function hitButton(){
+    userNewCard()
     if (userTotal == 21) {
+        dealerNewCard()
         winnings = winnings + newBet
-        winningsHTML.textContent = `Winnings: $` + newBet
+        winningsHTML.textContent = `Winnings: $` + winnings
+        sessionStorage.setItem('winnings', winnings)
         if (confirm("Blackjack!! Do you want to play again?")) {
             window.location.href = '/game.html'
         } else {
@@ -91,7 +93,8 @@ async function hitButton(){
     } else if (userTotal > 21) {
         dealerNewCard()  
         winnings = winnings - newBet
-        winningsHTML.textContent = `Winnings: $` - newBet
+        winningsHTML.textContent = `Winnings: $` + winnings
+        sessionStorage.setItem('winnings', winnings)
         if (confirm("Dealer won! Do you want to play again?")) {
             window.location.href = '/game.html'            
         } else {
@@ -112,8 +115,28 @@ async function hitButton(){
         }
 
 function standButton(){
-    dealerNewCard()
-    console.log(dealerTotal)
+    while (dealerTotal < 21) {
+        dealerNewCard()
+    }
+    if (dealerTotal == 21) {
+        winnings = winnings - newBet
+        winningsHTML.textContent = `Winnings: $` + winnings
+        sessionStorage.setItem('winnings', winnings)
+        if (confirm("Dealer won! Do you want to play again?")) {
+            window.location.href = '/game.html'            
+        } else {
+            window.location.href = '/index.html'
+        }
+    } else if (dealerTotal > 21) {
+        winnings = winnings + newBet
+        winningsHTML.textContent = `Winnings: $` + winnings
+        sessionStorage.setItem('winnings', winnings)
+        if (confirm("You win!! Do you want to play again?")) {
+            window.location.href = '/game.html'
+        } else {
+            window.location.href = '/index.html'
+        }
+    }
 }
 
 function dealerNewCard(){
