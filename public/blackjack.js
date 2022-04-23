@@ -57,6 +57,7 @@ let stand = document.getElementById('stand').addEventListener('click', function(
 
 let currentBet = document.getElementById('current-bet').textContent = "Your current bet: $" + newBet
 
+//initial deal function, loads with page
 function initialDeal() {
     dealerCards()
     userCards()
@@ -79,6 +80,8 @@ function initialDeal() {
             userT.textContent = userTotal
         }
 
+
+//adding hit button
 function hitButton(){
     userNewCard()
     if (userTotal == 21) {
@@ -86,6 +89,7 @@ function hitButton(){
         winnings = winnings + newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
+        //make alert wait for the cards to load!
         setTimeout (function (){
             if (confirm("Blackjack!! Do you want to play again?")) {
             window.location.href = '/game.html'
@@ -95,9 +99,11 @@ function hitButton(){
     }, 1000)
     } else if (userTotal > 21) {
         dealerNewCard()  
+        //updating your winnings and the html object
         winnings = winnings - newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
+        //make alert wait for the cards to load!
         setTimeout (function() {
             if (confirm("Dealer won! Do you want to play again?")) {
             window.location.href = '/game.html'            
@@ -107,7 +113,7 @@ function hitButton(){
     }, 1000)
     }
 } 
-
+//function to give the user new card
         function userNewCard(){
             let newUserValue = Math.round(Math.random() * 25)
             let newUserImage = document.createElement('img')
@@ -119,14 +125,17 @@ function hitButton(){
             userT.textContent = userTotal 
         }
 
+//adding the standButton
 function standButton(){
     while (dealerTotal < 21) {
         dealerNewCard()
     }
     if (dealerTotal == 21) {
+        //update winnings
         winnings = winnings - newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
+        //make it wait
         setTimeout(function(){
             if (confirm("Dealer won! Do you want to play again?")) {
             window.location.href = '/game.html'            
@@ -135,9 +144,11 @@ function standButton(){
         }
     }, 1000);
     } else if (dealerTotal > 21) {
+        //update winnings
         winnings = winnings + newBet
         winningsHTML.textContent = `Winnings: $` + winnings
         sessionStorage.setItem('winnings', winnings)
+        //make it wait
         setTimeout(function(){
             if (confirm("You win!! Do you want to play again?")) {
             window.location.href = '/game.html'
@@ -148,6 +159,7 @@ function standButton(){
 }
 }
 
+//give the dealer new card and update totals
 function dealerNewCard(){
     let newDealerValue = Math.round(Math.random() * 25)
     let newDealerImage = document.createElement('img')
@@ -159,6 +171,8 @@ function dealerNewCard(){
     dealerT.textContent = dealerTotal
 }
 
+
+//initial page load
 window.onload = () => {
     initialDeal()
 }
