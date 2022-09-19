@@ -1,0 +1,79 @@
+$color_1: white;
+$color_2: gray;
+$background-color_1: #0a380a;
+$background-color_2: blue;
+
+h1 {
+	color: $color_1;
+}
+#container {
+	border: 3px solid black;
+	text-align: center;
+	border-radius: 25px;
+	background-color: $background-color_1;
+}
+#play {
+	background-color: $background-color_2;
+	color: $color_1;
+	font-size: large;
+	width: 100px;
+	height: 30px;
+	margin: 25px;
+}
+#game-container {
+	border: 3px solid black;
+	text-align: center;
+	border-radius: 25px;
+	background-color: $background-color_1;
+}
+.bets {
+	max-width: 18%;
+	max-height: 200px;
+	margin: 25px;
+}
+.bet-button {
+	color: $color_1;
+	min-width: 80px;
+	background-color: $background-color_2;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+#total-bet {
+	color: $color_1;
+	font-size: 30px;
+	margin: 15px;
+}
+#blackjack-container {
+	border: 3px solid black;
+	text-align: center;
+	border-radius: 25px;
+	background-color: $background-color_1;
+}
+.button {
+	color: $color_1;
+	min-width: 80px;
+	background-color: $background-color_2;
+	margin-left: 30px;
+	margin-right: 30px;
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+.writing {
+	color: $color_1;
+	font-size: 30px;
+	margin: 15px;
+}
+.card {
+	width: 75px;
+	height: auto;
+}
+#user-hand {
+	margin-top: 5px;
+}
+#user-total {
+	margin-top: -15px;
+	color: $color_2;
+}
+#dealer-total {
+	color: $color_2;
+}
