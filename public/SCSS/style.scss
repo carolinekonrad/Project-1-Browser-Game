@@ -2,12 +2,13 @@ $color_1: white;
 $color_2: gray;
 $background-color_1: #0a380a;
 $background-color_2: blue;
+$border: 3px solid black;
 
 h1 {
 	color: $color_1;
 }
 #container {
-	border: 3px solid black;
+	border: $border;
 	text-align: center;
 	border-radius: 25px;
 	background-color: $background-color_1;
@@ -21,7 +22,7 @@ h1 {
 	margin: 25px;
 }
 #game-container {
-	border: 3px solid black;
+	border: $border;
 	text-align: center;
 	border-radius: 25px;
 	background-color: $background-color_1;
@@ -44,7 +45,7 @@ h1 {
 	margin: 15px;
 }
 #blackjack-container {
-	border: 3px solid black;
+	border: $border;
 	text-align: center;
 	border-radius: 25px;
 	background-color: $background-color_1;
